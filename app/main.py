@@ -222,5 +222,24 @@ def parse_resume():
     else:
         return jsonify({'status': 'error', 'message': 'Invalid file provided'}), 400
 
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+@app.route('/api/v1/history')
+def api_history():
+    # Show last 20 interviews for guest_user
+    interviews = list(DATABASE["INTERVIEWS"].find({"user_id": "guest_user"}).sort("created_at", -1).limit(20))
+    for i in interviews:
+        i["created_at"] = i["created_at"].isoformat() if "created_at" in i else ''
+        i["interview_identifier"] = i.get("interview_identifier", '')
+        i["interview_type"] = i.get("interview_type", '')
+        i["job_description"] = i.get("job_description", '')
+    return jsonify(interviews)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
