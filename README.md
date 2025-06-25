@@ -1,6 +1,6 @@
 # MockStar: AI-Powered Mock Interview Platform
 
-MockStar is a modern web application that helps users practice for job interviews using AI. Users can upload their resume, generate personalized interview questions, answer them (by typing or speaking), and receive feedback—including behaviour analysis—all in one place.
+MockStar is a web application that helps users practice for job interviews using AI. Users can upload their resume, generate personalized interview questions, answer them (by typing or speaking), and receive feedback—including behaviour analysis—all in one place.
 
 Unlike traditional mock interview tools that ask random questions, this AI-powered system mimics a real HR interview by analyzing the user’s resume and asking context-specific questions. For example, if your resume lists a project, the AI may ask about its tech stack. Once you mention tools like Jira, it will follow up with deeper questions like “How did you implement Jira in your project?”—just like a real HR would.
 
@@ -8,11 +8,11 @@ Unlike traditional mock interview tools that ask random questions, this AI-power
 
 ## Features
 
-- **User Authentication:** Secure login using OAuth (third-party login).
-- **Resume Upload & Parsing:** Upload your resume and get a detailed AI-generated summary.
+- **User Authentication:** Secure login using OAuth.
+- **Resume Upload & Parsing:** Upload your resume and get an AI-generated summary.
 - **Personalized Interview Generation:** AI generates interview questions tailored to your resume and job description.
 - **Mock Interview Session:** Practice answering questions in a clean, interactive UI. Voice input supported.
-- **Behaviour Analysis:** Real-time feedback on your confidence, eye contact, and facial expressions (if enabled).
+- **Behaviour Analysis:** (If enabled) Real-time feedback on your confidence, eye contact, and facial expressions.
 - **Settings Page:** Update your profile information easily.
 - **Session Management:** Secure, fast user sessions using Redis.
 - **Data Storage:** All user data, resumes, and interview history are stored in MongoDB.
@@ -56,6 +56,10 @@ Unlike traditional mock interview tools that ask random questions, this AI-power
 app/
   main.py            # Main backend logic (Flask app)
   static/            # CSS, images, JS
+    css/
+      style.css
+      interview.css
+    assets/
   templates/         # HTML templates (Jinja2)
     index.html
     interview.html
@@ -80,9 +84,11 @@ run.sh                # Run script
 ---
 
 ## Contributing
+
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
 ## License
+
 This project is for educational/demo purposes.
