@@ -1,0 +1,7 @@
+Flask
+flask-session
+pymongo
+redis
+python-dotenv
+requests
+google-generativeai
